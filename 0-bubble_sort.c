@@ -13,15 +13,15 @@ void bubble_sort(int *array, size_t size)
 	unsigned int i = 0;
 	unsigned int swp = 0;
 
-	for(pos = 0 ; pos < size - 1; pos++)
+	for(pos = 0 ; pos < size; pos++)
 	{
-		for (i = 0 ; i < size - i - 1; i++)
+		for (i = 0 ; i < size - pos - 1; i++)
 		{
-			if (array[pos] > array[pos + 1])
+			if (array[i] > array[i + 1])
 			{
-				swp = array[pos];
-				array[pos] = array[pos + 1];
-				array[pos + 1] = swp;
+				swp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = swp;
 				print_array(array, size);
 			}
 		}
