@@ -57,10 +57,10 @@ void quicksort(int *array, int low, int high, size_t size)
 {
 	if (low < high)
 	{
-		int pi = partition(array, low, high, size);
+		int p = partition(array, low, high, size);
 
-		quicksort(array, low, pi - 1, size);
-		quicksort(array, pi + 1, high, size);
+		quicksort(array, low, p - 1, size);
+		quicksort(array, p + 1, high, size);
 	}
 }
 
@@ -72,5 +72,7 @@ void quicksort(int *array, int low, int high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
+	if (!array || size < 2)
+		return;
 	quicksort(array, 0, size - 1, size);
 } 
