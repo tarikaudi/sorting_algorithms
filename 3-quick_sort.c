@@ -58,7 +58,7 @@ void quicksort(int *array, int low, int high, size_t size)
     int p = 0;
 	if (low < high)
 	{
-		int p = partition(array, low, high, size);
+		p = partition(array, low, high, size);
 		quicksort(array, low, p - 1, size);
 		quicksort(array, p + 1, high, size);
 	}
