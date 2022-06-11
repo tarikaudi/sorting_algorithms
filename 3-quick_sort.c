@@ -45,23 +45,26 @@ int partition(int *array, int low, int high, size_t size)
 }
 
 /**
-  * quicksort - quicksort algorithm
-  * @array: given array
-  * @low: starting index
-  * @high: ending index
-  * @size: size of the array
-  * Return: void
-  */
-
-void quicksort(int *array, int low, int high, size_t size)
+ * sort_q - quick_sort
+ * @array: to be sorted
+ * @low: starting index
+ * @high: ending index
+ * @size: size of array
+ * Return: Always 0 (Sucess)
+ */
+int sort_q(int *array, size_t low, size_t high, size_t size)
 {
+	size_t p;
+
 	if (low < high)
 	{
-		int pi = partition(array, low, high, size);
-
-		quicksort(array, low, pi - 1, size);
-		quicksort(array, pi + 1, high, size);
+		p = partition(array, low, high, size);
+		if (p != low)
+			sort_q(array, low, p - 1, size);
+		if (p != high)
+			sort_q(array, p + 1, high, size);
 	}
+	return (0);
 }
 
 /**
