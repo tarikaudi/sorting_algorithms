@@ -75,5 +75,5 @@ int sort_q(int *array, size_t low, size_t high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	quicksort(array, 0, size - 1, size);
+	sort_q(array, 0, size - 1, size);
 }
