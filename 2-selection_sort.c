@@ -9,16 +9,25 @@
 
 void selection_sort(int *array, size_t size)
 {
-    unsigned int i, j, tmp;
+	size_t i, d, f, aux2, aux;
 
-    for(i = 0; i < size; i++) {
-        for(j = i + 1; j < size; j++) {
-            if(array[i] > array[j]) {
-                tmp = array[i];
-                array[i] = array[j];
-                array[j] = tmp;
-                print_array(array, size);
-            }
-        }
-    }
+	for (i = 0; i < size; i++)
+	{
+		aux = 0;
+		for (d = i + 1, f = i; d < size; d++)
+		{
+			if (array[f] > array[d])
+			{
+				f = d;
+				aux = 1;
+			}
+		}
+		if (aux == 1)
+		{
+			aux2 = array[i];
+			array[i] = array[f];
+			array[f] = aux2;
+			print_array(array, size);
+		}
+	}
 }
