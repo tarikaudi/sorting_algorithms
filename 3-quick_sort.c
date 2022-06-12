@@ -55,7 +55,8 @@ int partition(int *array, int low, int high, size_t size)
 
 void quicksort(int *array, int low, int high, size_t size)
 {
-    int p = 0;
+	int p = 0;
+
 	if (low < high)
 	{
 		p = partition(array, low, high, size);
@@ -75,4 +76,4 @@ void quick_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 	quicksort(array, 0, size - 1, size);
-} 
+}
